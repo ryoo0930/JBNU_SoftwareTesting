@@ -31,6 +31,13 @@ TEST(ImpossibleTest, SumEqualToThird) {
     EXPECT_EQ(P_IMPOSSIBLE, classifyTriangle(7, 3, 4));  // 3+4=7, 순서 무관
 }
 
+// TC4-1: MC/DC 미커버 페어 보완 - C5(a+c<=b)가 결정 조건인 경우
+// a+b>c(C4=F) 이면서 a+c<=b(C5=T)인 케이스
+TEST(ImpossibleTest, SumACLeB) {
+    EXPECT_EQ(P_IMPOSSIBLE, classifyTriangle(1, 4, 1));  // a+c=2 <= b=4 (C5 결정)
+    EXPECT_EQ(P_IMPOSSIBLE, classifyTriangle(1, 3, 2));  // a+c=3 <= b=3 (C5 경계값)
+}
+
 // 2단계: 정삼각형 (P_EQUILATERAL)
 
 // TC5: 세 변이 모두 같은 경우
