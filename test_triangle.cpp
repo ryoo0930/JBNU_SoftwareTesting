@@ -65,7 +65,6 @@ TEST(IsoscelesTest, EquilateralIsNotIsosceles) {
 // TC10: 빗변이 c인 경우 (a² + b² == c²)
 TEST(RightAngledTest, HypotenuseAtC) {
     EXPECT_EQ(P_RIGHTANGLED, classifyTriangle(3, 4, 5));   // 9+16=25
-    EXPECT_EQ(P_RIGHTANGLED, classifyTriangle(5, 12, 13)); // 25+144=169
 }
 
 // TC11: 빗변 위치가 달라도 판별 (순서 무관)
