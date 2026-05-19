@@ -9,6 +9,7 @@ enum TriangleType {
     P_IMPOSSIBLE
 };
 
+bool isImpossible(double a, double b, double c);
 TriangleType classifyTriangle(double a, double b, double c);
 
 #endif
