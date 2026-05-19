@@ -39,9 +39,9 @@ P_IMPOSSIBLE > P_EQUILATERAL > P_ISOSCELES > P_RIGHTANGLED > P_SCALENE
 - [x] 정삼각형(세 변 동일)은 `P_ISOSCELES`가 아님을 확인
 
 ### 4단계: 직각삼각형 (P_RIGHTANGLED)
-- [ ] a² + b² == c² → `P_RIGHTANGLED`
-- [ ] 빗변이 어느 위치에 있어도 판별 (a, b, c 순서 무관)
-- [ ] 부동소수점 오차 처리 필요 여부 검토
+- [x] a² + b² == c² → `P_RIGHTANGLED`
+- [x] 빗변이 어느 위치에 있어도 판별 (a, b, c 순서 무관)
+- [x] 부동소수점 오차 처리 필요 여부 검토 (epsilon 1e-9 적용)
 
 ### 5단계: 부등변삼각형 (P_SCALENE)
 - [ ] 세 변이 모두 다르고, 직각도 아닐 때 → `P_SCALENE`

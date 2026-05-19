@@ -1,4 +1,6 @@
 #include "triangle.h"
+#include <algorithm>
+#include <cmath>
 
 TriangleType classifyTriangle(double a, double b, double c) {
     if (a <= 0 || b <= 0 || c <= 0)
@@ -11,6 +13,11 @@ TriangleType classifyTriangle(double a, double b, double c) {
 
     if (a == b || b == c || a == c)
         return P_ISOSCELES;
+
+    double sides[3] = {a, b, c};
+    std::sort(sides, sides + 3);
+    if (std::abs(sides[0]*sides[0] + sides[1]*sides[1] - sides[2]*sides[2]) < 1e-9)
+        return P_RIGHTANGLED;
 
     return P_IMPOSSIBLE;
 }
