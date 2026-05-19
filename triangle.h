@@ -3,6 +3,7 @@
 
 enum TriangleType {
     P_EQUILATERAL,
+    P_RIGHT_ISOSCELES,
     P_ISOSCELES,
     P_RIGHTANGLED,
     P_SCALENE,

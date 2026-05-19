@@ -5,6 +5,7 @@
 | 반환값 | 조건 |
 |---|---|
 | `P_EQUILATERAL` | 세 변의 길이가 모두 같음 (정삼각형) |
+| `P_RIGHT_ISOSCELES` | 이등변삼각형이면서 직각삼각형 (직각이등변삼각형) |
 | `P_ISOSCELES` | 두 변의 길이가 같음 (이등변삼각형) |
 | `P_RIGHTANGLED` | 직각삼각형 |
 | `P_SCALENE` | 세 변의 길이가 모두 다름 (부등변삼각형) |
@@ -17,7 +18,7 @@
 복합 케이스(예: 직각 이등변삼각형) 처리를 위한 판별 우선순위:
 
 ```
-P_IMPOSSIBLE > P_EQUILATERAL > P_ISOSCELES > P_RIGHTANGLED > P_SCALENE
+P_IMPOSSIBLE > P_EQUILATERAL > P_RIGHT_ISOSCELES > P_ISOSCELES > P_RIGHTANGLED > P_SCALENE
 ```
 
 ---
@@ -46,6 +47,8 @@ P_IMPOSSIBLE > P_EQUILATERAL > P_ISOSCELES > P_RIGHTANGLED > P_SCALENE
 ### 5단계: 부등변삼각형 (P_SCALENE)
 - [x] 세 변이 모두 다르고, 직각도 아닐 때 → `P_SCALENE`
 
-### 6단계: 복합 케이스 검증
-- [ ] 직각 이등변삼각형 (예: 1, 1, √2) → `P_ISOSCELES` (우선순위에 따라)
-- [ ] 직각 부등변삼각형 (예: 3, 4, 5) → `P_RIGHTANGLED`
+### 6단계: 직각이등변삼각형 (P_RIGHT_ISOSCELES)
+- [x] 이등변이면서 직각인 경우 → `P_RIGHT_ISOSCELES`
+- [x] 빗변 위치가 달라도 판별 (순서 무관)
+- [x] 기존 `P_ISOSCELES` 케이스에 영향 없음을 확인
+- [x] 기존 `P_RIGHTANGLED` 케이스에 영향 없음을 확인

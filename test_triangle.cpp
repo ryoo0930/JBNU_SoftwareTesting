@@ -92,3 +92,26 @@ TEST(ScaleneTest, AllSidesDifferent) {
 TEST(ScaleneTest, RightAngledIsNotScalene) {
     EXPECT_NE(P_SCALENE, classifyTriangle(3, 4, 5));
 }
+
+// 6단계: 직각이등변삼각형 (P_RIGHT_ISOSCELES)
+
+// TC15: 이등변이면서 직각인 경우
+TEST(RightIsoscelesTest, BasicCase) {
+    EXPECT_EQ(P_RIGHT_ISOSCELES, classifyTriangle(1, 1, 1.4142135623730951));   // 빗변이 c
+}
+
+// TC16: 빗변 위치가 달라도 판별
+TEST(RightIsoscelesTest, HypotenuseAtAnyPosition) {
+    EXPECT_EQ(P_RIGHT_ISOSCELES, classifyTriangle(1.4142135623730951, 1, 1));   // 빗변이 a
+    EXPECT_EQ(P_RIGHT_ISOSCELES, classifyTriangle(1, 1.4142135623730951, 1));   // 빗변이 b
+}
+
+// TC17: 기존 P_ISOSCELES 케이스에 영향 없음
+TEST(RightIsoscelesTest, IsoscelesNotAffected) {
+    EXPECT_EQ(P_ISOSCELES, classifyTriangle(3, 3, 4));  // 이등변이지만 직각 아님
+}
+
+// TC18: 기존 P_RIGHTANGLED 케이스에 영향 없음
+TEST(RightIsoscelesTest, RightAngledNotAffected) {
+    EXPECT_EQ(P_RIGHTANGLED, classifyTriangle(3, 4, 5));  // 직각이지만 이등변 아님
+}

@@ -17,13 +17,15 @@ TriangleType classifyTriangle(double a, double b, double c) {
     if (a == b && b == c)
         return P_EQUILATERAL;
 
-    if (a == b || b == c || a == c)
-        return P_ISOSCELES;
+    bool isIsos = (a == b || b == c || a == c);
 
     double sides[3] = {a, b, c};
     std::sort(sides, sides + 3);
-    if (std::abs(sides[0]*sides[0] + sides[1]*sides[1] - sides[2]*sides[2]) < 1e-9)
-        return P_RIGHTANGLED;
+    bool isRight = std::abs(sides[0]*sides[0] + sides[1]*sides[1] - sides[2]*sides[2]) < 1e-9;
+
+    if (isIsos && isRight)  return P_RIGHT_ISOSCELES;
+    if (isIsos)             return P_ISOSCELES;
+    if (isRight)            return P_RIGHTANGLED;
 
     return P_SCALENE;
 }
