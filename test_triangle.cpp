@@ -78,3 +78,17 @@ TEST(RightAngledTest, HypotenuseAtAnyPosition) {
 TEST(RightAngledTest, FloatingPoint) {
     EXPECT_EQ(P_RIGHTANGLED, classifyTriangle(1.0, 1.7320508075688772, 2.0)); // 1²+(√3)²=4=2²
 }
+
+// 5단계: 부등변삼각형 (P_SCALENE)
+
+// TC13: 세 변이 모두 다르고 직각이 아닌 경우
+TEST(ScaleneTest, AllSidesDifferent) {
+    EXPECT_EQ(P_SCALENE, classifyTriangle(2, 3, 4));  // 4+9=13 ≠ 16
+    EXPECT_EQ(P_SCALENE, classifyTriangle(3, 4, 6));  // 9+16=25 ≠ 36
+    EXPECT_EQ(P_SCALENE, classifyTriangle(5, 6, 8));  // 25+36=61 ≠ 64
+}
+
+// TC14: 직각삼각형(3,4,5)은 P_SCALENE이 아님
+TEST(ScaleneTest, RightAngledIsNotScalene) {
+    EXPECT_NE(P_SCALENE, classifyTriangle(3, 4, 5));
+}

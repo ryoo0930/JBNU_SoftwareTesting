@@ -19,5 +19,5 @@ TriangleType classifyTriangle(double a, double b, double c) {
     if (std::abs(sides[0]*sides[0] + sides[1]*sides[1] - sides[2]*sides[2]) < 1e-9)
         return P_RIGHTANGLED;
 
-    return P_IMPOSSIBLE;
+    return P_SCALENE;
 }

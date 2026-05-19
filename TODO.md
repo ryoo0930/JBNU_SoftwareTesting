@@ -44,7 +44,7 @@ P_IMPOSSIBLE > P_EQUILATERAL > P_ISOSCELES > P_RIGHTANGLED > P_SCALENE
 - [x] 부동소수점 오차 처리 필요 여부 검토 (epsilon 1e-9 적용)
 
 ### 5단계: 부등변삼각형 (P_SCALENE)
-- [ ] 세 변이 모두 다르고, 직각도 아닐 때 → `P_SCALENE`
+- [x] 세 변이 모두 다르고, 직각도 아닐 때 → `P_SCALENE`
 
 ### 6단계: 복합 케이스 검증
 - [ ] 직각 이등변삼각형 (예: 1, 1, √2) → `P_ISOSCELES` (우선순위에 따라)
