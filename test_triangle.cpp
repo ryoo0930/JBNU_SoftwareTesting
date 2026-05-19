@@ -37,3 +37,25 @@ TEST(ImpossibleTest, SumEqualToThird) {
 TEST(EquilateralTest, AllSidesEqual) {
     EXPECT_EQ(P_EQUILATERAL, classifyTriangle(3, 3, 3));
 }
+
+// 3단계: 이등변삼각형 (P_ISOSCELES)
+
+// TC6: a == b, b != c
+TEST(IsoscelesTest, FirstTwoEqual) {
+    EXPECT_EQ(P_ISOSCELES, classifyTriangle(3, 3, 4));
+}
+
+// TC7: a == c, a != b
+TEST(IsoscelesTest, FirstLastEqual) {
+    EXPECT_EQ(P_ISOSCELES, classifyTriangle(3, 4, 3));
+}
+
+// TC8: b == c, a != b
+TEST(IsoscelesTest, LastTwoEqual) {
+    EXPECT_EQ(P_ISOSCELES, classifyTriangle(4, 3, 3));
+}
+
+// TC9: 정삼각형은 P_ISOSCELES가 아님
+TEST(IsoscelesTest, EquilateralIsNotIsosceles) {
+    EXPECT_NE(P_ISOSCELES, classifyTriangle(3, 3, 3));
+}

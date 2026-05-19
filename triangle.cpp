@@ -9,5 +9,8 @@ TriangleType classifyTriangle(double a, double b, double c) {
     if (a == b && b == c)
         return P_EQUILATERAL;
 
+    if (a == b || b == c || a == c)
+        return P_ISOSCELES;
+
     return P_IMPOSSIBLE;
 }

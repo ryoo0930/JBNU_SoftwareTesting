@@ -33,10 +33,10 @@ P_IMPOSSIBLE > P_EQUILATERAL > P_ISOSCELES > P_RIGHTANGLED > P_SCALENE
 - [x] 세 변이 모두 같을 때 → `P_EQUILATERAL`
 
 ### 3단계: 이등변삼각형 (P_ISOSCELES)
-- [ ] a == b, b != c → `P_ISOSCELES`
-- [ ] a == c, a != b → `P_ISOSCELES`
-- [ ] b == c, a != b → `P_ISOSCELES`
-- [ ] 정삼각형(세 변 동일)은 `P_ISOSCELES`가 아님을 확인
+- [x] a == b, b != c → `P_ISOSCELES`
+- [x] a == c, a != b → `P_ISOSCELES`
+- [x] b == c, a != b → `P_ISOSCELES`
+- [x] 정삼각형(세 변 동일)은 `P_ISOSCELES`가 아님을 확인
 
 ### 4단계: 직각삼각형 (P_RIGHTANGLED)
 - [ ] a² + b² == c² → `P_RIGHTANGLED`
