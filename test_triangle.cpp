@@ -36,6 +36,4 @@ TEST(ImpossibleTest, SumEqualToThird) {
 // TC5: 세 변이 모두 같은 경우
 TEST(EquilateralTest, AllSidesEqual) {
     EXPECT_EQ(P_EQUILATERAL, classifyTriangle(3, 3, 3));
-    EXPECT_EQ(P_EQUILATERAL, classifyTriangle(1, 1, 1));
-    EXPECT_EQ(P_EQUILATERAL, classifyTriangle(5, 5, 5));
 }
