@@ -30,3 +30,12 @@ TEST(ImpossibleTest, SumEqualToThird) {
     EXPECT_EQ(P_IMPOSSIBLE, classifyTriangle(3, 4, 7));  // 3+4=7
     EXPECT_EQ(P_IMPOSSIBLE, classifyTriangle(7, 3, 4));  // 3+4=7, 순서 무관
 }
+
+// 2단계: 정삼각형 (P_EQUILATERAL)
+
+// TC5: 세 변이 모두 같은 경우
+TEST(EquilateralTest, AllSidesEqual) {
+    EXPECT_EQ(P_EQUILATERAL, classifyTriangle(3, 3, 3));
+    EXPECT_EQ(P_EQUILATERAL, classifyTriangle(1, 1, 1));
+    EXPECT_EQ(P_EQUILATERAL, classifyTriangle(5, 5, 5));
+}
