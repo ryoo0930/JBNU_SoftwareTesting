@@ -25,9 +25,9 @@ P_IMPOSSIBLE > P_EQUILATERAL > P_ISOSCELES > P_RIGHTANGLED > P_SCALENE
 ## TODO 리스트
 
 ### 1단계: 삼각형 불성립 (P_IMPOSSIBLE)
-- [ ] 변의 길이가 0 이하일 때 → `P_IMPOSSIBLE`
-- [ ] 두 변의 합이 나머지 한 변보다 작을 때 → `P_IMPOSSIBLE`
-- [ ] 두 변의 합이 나머지 한 변과 같을 때 → `P_IMPOSSIBLE` (경계값)
+- [x] 변의 길이가 0 이하일 때 → `P_IMPOSSIBLE`
+- [x] 두 변의 합이 나머지 한 변보다 작을 때 → `P_IMPOSSIBLE`
+- [x] 두 변의 합이 나머지 한 변과 같을 때 → `P_IMPOSSIBLE` (경계값)
 
 ### 2단계: 정삼각형 (P_EQUILATERAL)
 - [ ] 세 변이 모두 같을 때 → `P_EQUILATERAL`
